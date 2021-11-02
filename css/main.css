@@ -53,3 +53,14 @@ body {
 
 }
 
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.square.clicked {
+    background: lightblue;
+}
