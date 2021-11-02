@@ -11,9 +11,14 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 // inserimento const del bottone 'gioca'
 const btn = document.getElementById('setdimension');
 console.log(setdimension);
-// inserimento class 'griglia' perchè devo togliere il testo quando andrò a cliccare il bottone
-const griglia = document.querySelector('.griglia');
-console.log(griglia);
+
+// settaggio griglia
+//impostazione evento bottone click
+btn.addEventListener('click', () => {
+    console.log('click');
+
+});
+
 
 
 
