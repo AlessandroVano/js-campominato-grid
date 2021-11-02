@@ -16,6 +16,8 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
   4. inserimento regolina per pulire 
   5. creazione costante per impostare il livello di difficoltà
   6. inserimento costante (all'interno del evento click, quindi andrà a cascata) per definirgli che opzione di difficoltà hai scelto
+  7. inserimento di due variabili (let) per definire il numero di celle totali ed il numero di celle per lato
+  8. inseritmento di uno switch per settare le due variabili
 
 
 
@@ -41,6 +43,28 @@ setBtn.addEventListener('click', () => {
     // 6. inserimento costante (all'interno del evento click, quindi andrà a cascata) per definirgli che opzione di difficoltà hai scelto
     const sceltaDifficoltà = difficoltaLivello.value;
     console.log(sceltaDifficoltà);
+    // 7. inserimento di due variabili (let) per definire il numero di celle totali ed il numero di celle per lato
+    let numeroCelle;
+    let cellePerLato;
+    //  8. inseritmento di uno switch per settare le due variabili
+    /* scelgo (sceltaDifficoltà) perchè è quella dove ho le tre scelte (easy, medium e hard che ho impostato nel punto .6) */
+    
+    switch ( sceltaDifficoltà) {
+        case '1':
+            numeroCelle = 100;
+            cellePerLato = 10;
+            break;
+        case '2':
+            numeroCelle = 81;
+            cellePerLato = 9;
+            break;
+        case '3':
+             numeroCelle = 49;
+             cellePerLato = 7;
+            break;
+    }
+    console.log(numeroCelle);
+    console.log(cellePerLato);
 });
 
 
