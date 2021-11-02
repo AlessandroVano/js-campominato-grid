@@ -34,3 +34,22 @@ body {
 .div-2 {
     margin-top: 0.8rem;
 } 
+
+
+/* MAIN section */
+/* (griglia di quadratini) */
+
+.text {
+    text-align: center;
+}
+
+.griglia {
+    display: flex;
+    flex-wrap: wrap;
+    width:  600px;
+    height: 600px;
+    margin: 60px auto;
+    border: 3px solid white;
+
+}
+
