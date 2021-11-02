@@ -12,20 +12,24 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
   1. inserimento costante bottone
   2. impostazione evento click del bottone
   3. inserimento costante per eliminare l'h2 e successivamente ci servirà per generare la griglia
+  4. inserimento regolina per pulire 
+  5. creazione costante per impostare le griglie
 
 
 
 
  */
 // inserimento const del bottone 'gioca'
-const btn = document.getElementById('setdimension');
-console.log(setdimension);
+const setBtn = document.getElementById('imposta-difficolta');
+console.log(setBtn);
 // inserimento costante per eliminare l'h2 e successivamente ci servirà per generare la griglia
-const griglia = document.querySelector('.griglia')
+const griglia = document.querySelector('.griglia');
+//creazione costante per impostare le griglie
+
 
 // SETTAGGIO GRIGLIA
 //impostazione evento bottone click
-btn.addEventListener('click', () => {
+setBtn.addEventListener('click', () => {
     console.log('click');
     //eliminazione del contenuto dentro 'griglia'
     griglia.innerHTML = '';
