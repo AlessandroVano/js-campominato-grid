@@ -18,6 +18,8 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
   6. inserimento costante (all'interno del evento click, quindi andrà a cascata) per definirgli che opzione di difficoltà hai scelto
   7. inserimento di due variabili (let) per definire il numero di celle totali ed il numero di celle per lato
   8. inseritmento di uno switch per settare le due variabili
+  9. Generazione griglia padre dove inseriremo le griglie figlie
+  9 a. selezioniamo la griglia padre per 'appendergli' i figli appena creati 
 
 
 
@@ -48,6 +50,9 @@ setBtn.addEventListener('click', () => {
     let cellePerLato;
     //  8. inseritmento di uno switch per settare le due variabili
     /* scelgo (sceltaDifficoltà) perchè è quella dove ho le tre scelte (easy, medium e hard che ho impostato nel punto .6) */
+
+    /* (100, 81, 49) sono il numero di celle per difficoltà impostata
+        (10, 9, 7) questo è quello che di solito calcoliamo nel css per ottenere la quantità di celle disposte x lato  */
     
     switch ( sceltaDifficoltà) {
         case '1':
@@ -65,6 +70,16 @@ setBtn.addEventListener('click', () => {
     }
     console.log(numeroCelle);
     console.log(cellePerLato);
+
+    // 9. Generazione griglia padre dove inseriremo le griglie figlie  inseriamo una costante per creare un elemento (questo è un nodo elaborato con una classe)
+    const grigliaJS = document.createElement('div');
+    grigliaJS.classList.add('grigliaJS');
+
+   // 9 a. selezioniamo la griglia padre per 'appendergli' i figli appena creati 
+   griglia.append(grigliaJS);
+
+ 
+
 });
 
 
