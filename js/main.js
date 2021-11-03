@@ -20,6 +20,13 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
   8. inseritmento di uno switch per settare le due variabili
   9. Generazione griglia padre dove inseriremo le griglie figlie
   9 a. selezioniamo la griglia padre per 'appendergli' i figli appena creati 
+  11. generare funzione per creare quadratini e numeri all'interno
+  12. generare classe e dimensioni dei quadratini
+  13. crea un numero da inserire nel nodo precedente e chiudiamo la funzione
+  14. ora useremo il for per andare a creare effettivamente i quadratini
+  15. creazione variabile con il numerino che cambierà ogni volta
+  16. creazione evento per cambiare il quadratino una volta cliccato
+  17. rendere visibile i quadratini (con i numeri in cascata già da prima nel DOM)
 
 
 
@@ -54,7 +61,7 @@ setBtn.addEventListener('click', () => {
     /* (100, 81, 49) sono il numero di celle per difficoltà impostata
         (10, 9, 7) questo è quello che di solito calcoliamo nel css per ottenere la quantità di celle disposte x lato  */
     
-    switch ( sceltaDifficoltà) {
+    switch (sceltaDifficoltà) {
         case '1':
             numeroCelle = 100;
             cellePerLato = 10;
@@ -66,7 +73,7 @@ setBtn.addEventListener('click', () => {
         case '3':
              numeroCelle = 49;
              cellePerLato = 7;
-            break;
+            
     }
     console.log(numeroCelle);
     console.log(cellePerLato);
@@ -75,13 +82,53 @@ setBtn.addEventListener('click', () => {
     const grigliaJS = document.createElement('div');
     grigliaJS.classList.add('grigliaJS');
 
-   // 9 a. selezioniamo la griglia padre per 'appendergli' i figli appena creati 
-   griglia.append(grigliaJS);
-
  
+   
+    // 14. ora useremo il for per andare a creare effettivamente i quadratini
+   for(let i = 1; i <= numeroCelle; i++) {
+     
+     
+     //  15. richiama la funzione della generazione quadratini
 
-});
+     const square = generazioneQuadratini(i, cellePerLato)
+    
+     // 16. creazione evento per cambiare il quadratino una volta cliccato
+     square.addEventListener('click', () => {
+         square.classList.add('clicked');
+     });
+
+
+      // 17. rendere visibile i quadratini (con i numeri in cascata già da prima nel DOM)
+      grigliaJS.append(square); 
+
+   } 
+ 
+      // 9 a. selezioniamo la costante (griglia) padre creata all'inizio per 'appendergli' la griglia.
+      griglia.append(grigliaJS);
+    });
 
 
 
+
+
+
+
+
+
+
+// 11. generare funzione per creare quadratini e numeri all'interno
+function generazioneQuadratini (num, celle) {
+    const nodo = document.createElement('div');
+    
+    //  12. generare classe e dimensioni dei quadratini
+    nodo.classList.add('square');
+    nodo.style.width = `calc(100% / ${celle})`;
+    nodo.style.height = `calc(100% / ${celle})`;
+
+
+    // 13. crea un numero da inserire nel nodo precedente e chiudiamo la funzione
+    nodo.append(num);
+
+     return nodo;
+}
 
